@@ -32,10 +32,10 @@ Route::get('posts/{id}/{slug}', function ($id, $slug) {
 })->where(['id' => '[0-9]+', 'slug' => '[A-Za-z]+']);
 
 
-// route nickname 
+// route nickname
 Route::get('members/{userId}/comments/{commentId}', [MemberController::class, 'show'])->name('members.show');
-// possible output specific route url 
-// in view -> echo route('members.show' ['userId' => 14]); 
+// possible output specific route url
+// in view -> echo route('members.show' ['userId' => 14]);
 // expect https://{}
 
 // route function parameter send example
@@ -61,6 +61,12 @@ Route::prefix('dashboard')->group(function () {
 //     Route::get('users', function() {
 //         return 'apply middleware auth from /dashboard/users';
 //     });
+// });
+
+// view에 데이터 전달하기
+// Route::get('tasks', function() {
+//     return view('tasks.index')
+//             ->with('tasks', Task::all());
 // });
 
 
