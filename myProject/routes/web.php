@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return 'Hello, World';
-});
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return 'Hello, World';
+// });
+
+//use Controller
+Route::get('/', [TaskController::class, 'index']);
 
 //process parameters use regex
 Route::get('users/{id}', function($id = 'fallbackId') {
@@ -68,6 +72,9 @@ Route::prefix('dashboard')->group(function () {
 //     return view('tasks.index')
 //             ->with('tasks', Task::all());
 // });
+
+Route::get('tasks/create', [TaskController::class, 'create']);
+Route::post('tasks', [TaskController::class, 'store']);
 
 
 // did not match any routes
