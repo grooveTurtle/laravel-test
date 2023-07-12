@@ -37,7 +37,7 @@ Route::get('posts/{id}/{slug}', function ($id, $slug) {
 
 
 // route nickname
-Route::get('members/{userId}/comments/{commentId}', [MemberController::class, 'show'])->name('members.show');
+// Route::get('members/{userId}/comments/{commentId}', [MemberController::class, 'show'])->name('members.show');
 // possible output specific route url
 // in view -> echo route('members.show' ['userId' => 14]);
 // expect https://{}

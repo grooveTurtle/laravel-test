@@ -8,10 +8,10 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return 'Hello world!';
+        // return 'Hello world!';
         // to views/tasks/index.blade.php or index.php
-        // return view('tasks.index')
-        //         ->with('tasks', Task::all());
+        return view('tasks.index')
+                ->with('tasks', 'Hell Yeah');
     }
 
     // public function create() {
